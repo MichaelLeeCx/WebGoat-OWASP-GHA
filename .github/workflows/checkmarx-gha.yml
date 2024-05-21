@@ -27,6 +27,7 @@ jobs:
   build:
     # The type of runner that the job will run on - Ubuntu is required as Docker is leveraged for the action
     runs-on: ubuntu-latest
+    environment: Checkmarx SAST
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
