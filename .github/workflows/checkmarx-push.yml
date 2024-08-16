@@ -13,7 +13,7 @@
 #
 # For full documentation, including a list of all inputs, please refer to the README https://github.com/checkmarx-ts/checkmarx-cxflow-github-action
 
-name: Checkmarx SAST Scan
+name: CxFlow-GitHub-Push
 on:
   push:
     branches:
@@ -29,10 +29,10 @@ jobs:
     - name: Checkmarx CxFlow Action
       uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.4 #Github Action version
       with:
-        project: ${{ secrets.CHECKMARX_PROJECT }} # <-- Insert Checkmarx SAST Project Name
-        team: ${{ secrets.CHECKMARX_TEAMS }}
-        checkmarx_url: ${{ secrets.CHECKMARX_URL }} # To be stored in GitHub Secrets.
-        checkmarx_username: ${{ secrets.CHECKMARX_USER }} # To be stored in GitHub Secrets.
+        project: ${{ vars.CHECKMARX_PROJECT }} # <-- Insert Checkmarx SAST Project Name
+        team: ${{ vars.CHECKMARX_TEAMS }}
+        checkmarx_url: ${{ vars.CHECKMARX_URL }} # To be stored in GitHub Secrets.
+        checkmarx_username: ${{ vars.CHECKMARX_USER }} # To be stored in GitHub Secrets.
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }} # To be stored in GitHub Secrets.
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }} # To be stored in GitHub Secrets.
         break_build: false
